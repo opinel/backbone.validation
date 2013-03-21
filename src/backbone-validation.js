@@ -1,3 +1,5 @@
+// Backbone.Validation 0.7.1
+//Forked version from https://github.com/opinel/backbone.validation
 Backbone.Validation = (function(_){
   'use strict';
 
@@ -57,7 +59,7 @@ Backbone.Validation = (function(_){
 
     _.each(obj, function(val, key) {
       if(obj.hasOwnProperty(key)) {
-        if (val && typeof val === 'object' && !(val instanceof Date || val instanceof RegExp)) {
+        if (val && typeof val === 'object' && !(val instanceof Date || val instanceof RegExp || val instanceof Array)) {
           flatten(val, into, prefix + key + '.');
         }
         else {
